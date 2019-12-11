@@ -3,7 +3,7 @@
 {% block content123 %}
     {% if listques %}
         {% for i in listques %}
-            <a href="{% url 'detail_view' i.id %}">
+            <a href="{% url 'polls:detail_view' i.id %}">
                 <p>{{ i.question_text }} </p>
             </a>
         {% endfor %}
