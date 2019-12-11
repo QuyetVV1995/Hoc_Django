@@ -3,7 +3,9 @@
 {% block content123 %}
     {% if listques %}
         {% for i in listques %}
-            <p>{{ i.question_text }} </p>
+            <a href="{% url 'detail_view' i.id %}">
+                <p>{{ i.question_text }} </p>
+            </a>
         {% endfor %}
     {% else %}
         <h3 style="color: red;">Khong co database</h3>

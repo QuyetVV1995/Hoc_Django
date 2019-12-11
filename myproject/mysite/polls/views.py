@@ -21,3 +21,16 @@ def detailView(request, question_id):
     v_ques = Question.objects.get(pk=question_id)
     return render(request, "polls/detail_question.html", {"qs": v_ques})
 
+
+def vote(request, question_id):
+    v_ques = Question.objects.get(pk=question_id)
+    try:
+        duLieu = request.POST['choice']
+        c = v_ques.choice_set.get(pk=duLieu)     # Lay cau tra loi cua cau hoi co pk = question_id
+    except:
+        HttpResponse('Error')
+    c.vote += 1
+    c.save()
+    return render(request, 'polls/result.html',{'q': v_ques})
+
+
