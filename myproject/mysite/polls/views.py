@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Question
 
@@ -12,7 +12,7 @@ def index(request):  # dinh nghia ham
 
 
 def viewList(request):
-    v_listQuestion = Question.objects.all()
+    v_listQuestion = Question.objects.all()    #Lay tat ca doi tuong nen khi in ra can dung vong for
+    #v_listQuestion = get_object_or_404(Question, pk=4)  # Lay 1 doi tuong nen khi in ra ko can dung vong for
     context = {"listques": v_listQuestion}
-    # return render(request, "polls/question_list","listques":v_listQuestion)
     return render(request, "polls/question_list.html", context)
