@@ -16,3 +16,8 @@ def viewList(request):
     #v_listQuestion = get_object_or_404(Question, pk=4)  # Lay 1 doi tuong nen khi in ra ko can dung vong for
     context = {"listques": v_listQuestion}
     return render(request, "polls/question_list.html", context)
+
+def detailView(request, question_id):
+    v_ques = Question.objects.get(pk=question_id)
+    return render(request, "polls/detail_question.html", {"qs": v_ques})
+
