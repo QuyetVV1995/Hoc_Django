@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.views import View
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, decorators
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
@@ -22,9 +23,13 @@ class LoginClass(View):
         login(request, myuser)
         return render(request, 'Login/success.html')
 
-class ViewUser(View):
+
+class ViewUser(LoginRequiredMixin,View):    # Luu y nen de LoginRequiredMixin truoc View
+    login_url = '/login/'
     def get(self, request):
-        if not request.user.is_authenticated:
-            return HttpResponse('Vui long dang nhap')
-        else:
-            return HttpResponse('Day la ViewUser')
+        return HttpResponse('Day la ViewUser')
+
+
+@decorators.login_required(login_url='/login/')
+def view_product(request):
+    return HttpResponse('View Product')
