@@ -7,3 +7,9 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = {'title', 'content','time_create',}          # Them cac thuoc tinh cua Post de hien thi
 
+class sendEmail(forms.Form):
+    title = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    content = forms.CharField(widget=forms.Textarea)
+    cc = forms.BooleanField(required=False)
+
