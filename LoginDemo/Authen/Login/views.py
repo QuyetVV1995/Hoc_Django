@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.views import View
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 
@@ -19,4 +19,12 @@ class LoginClass(View):
         myuser = authenticate(username=v_username, password=v_password)
         if myuser is None:
                 return HttpResponse('User khong ton tai')
-        return HttpResponse('Username Password : %s %s' % (v_username, v_password))
+        login(request, myuser)
+        return render(request, 'Login/success.html')
+
+class ViewUser(View):
+    def get(self, request):
+        if not request.user.is_authenticated:
+            return HttpResponse('Vui long dang nhap')
+        else:
+            return HttpResponse('Day la ViewUser')
