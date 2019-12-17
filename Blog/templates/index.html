@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 <style>
     body {
         font-family: "Roboto", sans-serif;
@@ -14,19 +15,143 @@
     .card {
         box-shadow: 0 16px 48px #E3E7EB;
     }
+
+    header.masthead {
+      margin-bottom: 0.5px;
+      background: no-repeat center center;
+      background-attachment: scroll;
+      position: relative;
+      background-size: cover;
+    }
+    header.masthead .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #212529;
+      opacity: 0.5;
+    }
+    header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+  padding: 200px 0 150px;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .page-heading,
+  header.masthead .post-heading,
+  header.masthead .site-heading {
+    padding: 200px 0;
+  }
+}
+
+header.masthead .page-heading,
+header.masthead .site-heading {
+  text-align: center;
+}
+
+header.masthead .page-heading h1,
+header.masthead .site-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .page-heading h1,
+  header.masthead .site-heading h1 {
+    font-size: 80px;
+  }
+}
+
+header.masthead .post-heading h1 {
+  font-size: 35px;
+}
+
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: none;
+}
+
+header.masthead .post-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 30px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading .meta {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
+
+header.masthead .post-heading .meta a {
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .post-heading h1 {
+    font-size: 55px;
+  }
+  header.masthead .post-heading .subheading {
+    font-size: 30px;
+  }
+}
+section.education-section {
+  background-image: url('{% static 'myblog/img/c.jpg' %}');
+  height: 500px;
+  background-color: #212529;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+section.education-section {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  color: black;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+section.education-section .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #868e96;
+      opacity: 0.5;
+    }
+
 </style>
 <!-- About -->
-<header class="masthead">
+<header class="masthead"  style="background-image: url('{% static 'myblog/img/home-bg.jpg' %}')">
     <div class="overlay"></div>
-    <div class="container .bg-light" id="about">
+    <div class="container " id="about">
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                <h1 class="mb-0 ">Vũ
-                  <span class="text-primary" >Quyết</span>
+                <h1 class="mb-0 text-center ">
+                  <span> Vũ Quyết</span>
                 </h1>
-                <div class="subheading mb-5">số 26 ngõ 27 Phan Văn Trường Cầu Giấy Hà Nội Việt Nam (+84) 359296186 ·
-                  <a href="mailto:quyeta2ubqn@gmail.com">quyeta2ubqn@gmail.com</a>
+                <div class="subheading mb-5 text-right"> Số 26 ngõ 27 Phan Văn Trường Cầu Giấy Hà Nội Việt Nam (+84) 0359296186 ·
+                  <a class="text-light" href="mailto:quyeta2ubqn@gmail.com">quyeta2ubqn@gmail.com</a>
                 </div>
                 <p class="lead mb-5">Tôi là một người yêu thích văn hóa và con người Nhật Bản. Với niềm đam mê công nghệ, tôi
                                     mong muốn một ngày không xa, mình có thể làm việc tại xứ sở mặt trời mọc</p>
@@ -37,30 +162,31 @@
 </header>
 
 <!-- Education -->
-<section class="blog-section p-3 p-lg-5 d-flex align-items-center" id="education">
+<section class="education-section p-3 p-lg-5 d-flex align-items-center" id="education">
+    <div class="overlay"></div>
       <div class="w-100">
         <h2 class="mb-5">Education</h2>
 
-        <div class="blog-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="blog-content">
+        <div class="education-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="education-content">
             <h3 class="mb-0">Đại học Bách Khoa Hà Nội</h3>
             <div class="subheading mb-3">Cử nhân điện tử viễn thông</div>
             <div>Lập trình Nhúng</div>
             <p>GPA: 2.5</p>
           </div>
 
-          <div class="blog-date text-md-right">
+          <div class="education-date text-md-right">
             <span class="text-primary">9/2013 - 5/2019</span>
           </div>
         </div>
 
-        <div class="blog-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="blog-content">
+        <div class="education-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="education-content">
             <h3 class="mb-0">SIPLAB - Signal Information Procees Laboratory</h3>
             <div class="subheading mb-3">Sinh viên nghiên cứu</div>
              <div>Nghiên cứu, lập trình các dòng vi điều khiển: 8051, PIC16F877A, ARM</div>
          </div>
-          <div class="blog-date text-md-right">
+          <div class="education-date text-md-right">
             <span class="text-primary">9/2016 - 6/2017</span>
           </div>
         </div>
@@ -82,7 +208,7 @@
             </div>
             {% endfor %}
         </div>
-        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+
     </div>
 </div>
 

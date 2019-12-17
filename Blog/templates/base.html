@@ -8,49 +8,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
         <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
-        }
-        .shadow {
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-danger {
-            color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
-        }
-        .masthead {
-            background: #3398E1;
-            height: auto;
-            padding-bottom: 15px;
-            box-shadow: 0 16px 48px #E3E7EB;
-            padding-top: 10px;
-        }
 
+        .social-icons a {
+          display: inline-block;
+          height: 3.5rem;
+          width: 3.5rem;
+          background-color: #495057;
+          color: #fff !important;
+          border-radius: 100%;
+          text-align: center;
+          font-size: 1.5rem;
+          line-height: 3.5rem;
+          margin-right: 1rem;
+        }
+        .navbar-nav .nav-item .nav-link {
+          font-weight: 500;
+          letter-spacing: 0.05rem;
+          text-transform: uppercase;
+        }
     </style>
 
         <!-- Navigation -->
                <!--          smalls screens background color                  color navbar     fixed position          -->
-        <nav class="navbar navbar-expand-sm bg-secondary .justify-content-center navbar-dark sticky-top">
-            <a class="navbar-brand" href="#">Blog</a>       <!-- Highligt project -->
+        <nav class="navbar navbar-expand-sm bg-info text-white .justify-content-center navbar-dark sticky-top" id="home">
+            <a class="navbar-brand" href="#home">HOME</a>       <!-- Highligt project -->
           <!-- Links -->
-          <ul class="navbar-nav">
+          <ul class="navbar-nav active">
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link active" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Education</a>
+              <a class="nav-link active" href="#education">Education</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#project">Project</a>
+              <a class="nav-link active" href="#project">Project</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="#interests">Interests</a>
             </li>
           </ul>
@@ -62,8 +61,18 @@
         {% endblock content %}
         </div>
         <!-- Footer -->
+
         <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Django Central</p>
+             <div class="social-icons text-center">
+              <p><h5 class="card-header">Follow Me</h5></p>
+             <a href="https://www.facebook.com/vu.vanquyet.50">
+                <i class="fa fa-facebook" style="font-size:36px"></i></a>
+
+             <a href="https://github.com/QuyetVV1995?tab=repositories">
+            <i class="fa fa-github" style="font-size:36px"></i></a>
+
+            <p class="m-0 text-dark text-center ">Copyright &copy; 2019</p>
+             </div>
         </footer>
     </body>
 </html>
