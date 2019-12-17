@@ -1,0 +1,9 @@
+section.blog-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  max-width: 75rem;
+}
+
+section.blog-section .blog-item .blog-date {
+  min-width: none;
+}
