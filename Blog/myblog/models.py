@@ -16,7 +16,6 @@ class Post(models.Model):
     content = models.TextField()                                                            # Noi dung
     created_on = models.DateTimeField(auto_now_add=True)                                    # Ngay khoi tao
     status = models.IntegerField(choices=STATUS, default=0)                                 # Trang thai
-    introduction = models.CharField(max_length=200)
 
     class Meta:                             # Sap xep ket qua trong truong created_on theo thu tu giam dan
         ordering = ['-created_on']          # Su dung tien to am, bai viet xuat ban gan day se hien len dau tien
