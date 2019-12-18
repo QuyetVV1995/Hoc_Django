@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 <style>
+
      header.masthead {
       margin-bottom: 0.5px;
       background: no-repeat center center;
@@ -9,13 +10,7 @@
       position: relative;
       background-size: cover;
     }
-    section.edu{
-        margin-bottom: 0.5px;
-      background: no-repeat center center;
-      background-attachment: scroll;
-      position: relative;
-      background-size: cover;
-    }
+
     header.masthead .overlay {
       position: absolute;
       top: 0;
@@ -25,21 +20,7 @@
       background-color: #2d3436;
       opacity: 0.5;
     }
-    section.edu .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #2d3436;
-      opacity: 0.5;
-    }
-
     header.masthead .site-heading {
-    padding: 200px 0 150px;
-    color: white;
-    }
-    section.edu .site{
     padding: 200px 0 150px;
     color: white;
     }
@@ -58,6 +39,27 @@
       margin: 10px 0 0;
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
+            section.edu{
+      margin-bottom: 0.5px;
+      background: no-repeat center center;
+      background-attachment: scroll;
+      position: relative;
+      background-size: cover;
+    }
+    section.edu .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #2d3436;
+      opacity: 0.5;
+    }
+
+    section.edu .site{
+    padding: 200px 0 150px;
+    color: white;
+    }
     section.edu .context{
         font-size: 24px;
       font-weight: 300;
@@ -74,6 +76,57 @@
       background-color: #2d3436;
       opacity: 0.9;
     }
+    section.project .site{
+    padding: 100px 0 50px;
+    color: white;
+    }
+
+    section.interests{
+        margin-bottom: 0.5px;
+      background: no-repeat center;
+      background-attachment: scroll;
+      position: relative;
+      background-size: cover;
+    }
+    section.interests .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #2d3436;
+      opacity: 0.3;
+    }
+    section.interests .text{
+    padding: 200px 0 150px;
+    color: white;
+    }
+    section.interest .img_tra
+
+
+    section.interest .img_tra .polaroid{
+    background-color: #2d3436;
+    box-shadow: 0 16px 48px #E3E7EB;
+    margin-bottom: 25px;
+    color: black;
+
+    section.interest .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+
+    section.interest .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    }
+    .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
 </style>
 <!-- About -->
 <header class="masthead"  style="background-image: url('{% static 'myblog/img/home-bg.jpg' %}')">
@@ -85,11 +138,11 @@
                 <h1 class="mb-0 text-center ">
                   <span> Vũ Quyết</span>
                 </h1>
-                <div class="subheading mb-5 text-right"> Số 26 ngõ 27 Phan Văn Trường Cầu Giấy Hà Nội Việt Nam (+84) 0359296186 ·
+                <div class="subheading mb-5 text-right"> 26/27 Phan Van Truong Ward, Cau Giay District, Ha Noi, Viet Nam (+84) 0359296186 ·
                   <a class="text-light" href="mailto:quyeta2ubqn@gmail.com">quyeta2ubqn@gmail.com</a>
                 </div>
-                <p class="lead mb-5">Tôi là một người yêu thích văn hóa và con người Nhật Bản. Với niềm đam mê công nghệ, tôi
-                                    mong muốn một ngày không xa, mình có thể làm việc tại xứ sở mặt trời mọc</p>
+                <p class="lead mb-5">I love Japanese culture and people. I'm learning Japanese.
+                    With a passion for technology, I wish that someday, I can work in the land of the sun</p>
                 </div>
             </div>
         </div>
@@ -97,16 +150,16 @@
 </header>
 
 <!-- Education -->
-<section class="edu p-3 p-lg-5 d-flex align-items-center" style="background-image: url('{% static 'myblog/img/e.jpg' %}')" id="education">
+<section class="edu p-3 p-lg-5 d-flex align-items-center" style="background-image: url('{% static 'myblog/img/edu.jpg' %}')" id="education">
     <div class="overlay"></div>
       <div class="site w-100 col-md-8 col-md-10 mx-auto">
         <h1 class="mb-5">Education</h1>
 
         <div class="item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="content">
-            <h3 class="mb-0">Đại học Bách Khoa Hà Nội</h3>
-            <div class="subheading mb-3">Cử nhân điện tử viễn thông</div>
-            <div>Lập trình Nhúng</div>
+            <h3 class="mb-0">Ha Noi University of Science and Technology</h3>
+            <div class="subheading mb-3">School of Electronics and Telecommunications</div>
+            <div>Program Embedded for Microcontrollers</div>
             <p>GPA: 2.5</p>
           </div>
         </div>
@@ -114,15 +167,18 @@
         <div class="item d-flex flex-column flex-md-row justify-content-between">
           <div class="content">
             <h3 class="mb-0">SIPLAB - Signal Information Procees Laboratory</h3>
-            <div class="subheading mb-3">Sinh viên nghiên cứu</div>
-             <div>Nghiên cứu, lập trình các dòng vi điều khiển: 8051, PIC16F877A, ARM</div>
+            <div class="subheading mb-3">Research student</div>
+             <div>Research, program the microcontroller lines: 8051, PIC16F877A, ARM</div>
          </div>
         </div>
       </div>
     </section>
-
-<section class="project " id="project" style="background-image: url('{% static 'myblog/img/f.jpeg' %}')">
+<!-- Project -->
+<section class="project " id="project" style="background-image: url('{% static 'myblog/img/project.jpeg' %}')">
 <div class="container" >
+    <div class="site w-100 col-md-8 col-md-10 mx-auto">
+    <h1 class="mb-5">Project</h1>
+    </div>
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
@@ -131,7 +187,7 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h7 font-italic">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <p class="card-text">{{post.introduction }}</p>
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
@@ -140,13 +196,45 @@
     </div>
 </div>
 </section>
-<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
+
+<!-- Interests -->
+<section class="interests p-3 p-lg-5 d-flex align-items-center" id="interests" style="background-image: url('{% static 'myblog/img/interests.jpeg' %}')">
+    <div class="overlay"></div>
+    <div class=" text w-100 col-md-8 col-md-10 mx-auto">
         <h2 class="mb-5">Interests</h2>
-        <p>Tôi là một người đam mê du lịch, khám phá văn hóa các vùng miền ở trong và người nước.</p>
-        <p class="mb-0">Tôi thích chụp ảnh về con người và thiên nhiên.</p>
-        <p class="mb-0">Tôi thích đọc sách. Cuốn sách tâm đắc nhất của tôi là Đắc Nhân Tâm</p>
-        <p class="mb-0">Tôi thích đá bóng cùng bạn bè.</p>
+        <p>I like traveling, I want to experience culture and life in many places. Let's look back at the places I've been.
+        I love taking photos of people and nature</p>
+        <div class="row">
+            <div class="column">
+            <div class="polaroid col-md-8 mt-3 left ">
+            <img src="/static/myblog/img/dulich_socson.jpg">
+                <div class="container">
+              <p>Soc Son Mountain</p>
+              </div>
+                <img src="/static/myblog/img/dulich_maichau.jpg" alt="Soc Son Mountain">
+                <div class="container">
+              <p>Mai Chau travel</p>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div>
+        <p class="mb-0">Books teach me many things, so I always try to spend time reading.
+            My favorite book is: <i> How to Win Friends and Influence People (Đắc Nhân Tâm) -  Dale Carnegie</i></p>
+        </div>
+        <p class="mb-0">I like to play soccer with friends at school, at the company. Football helps me connect with people.</p>
+        <div class="row">
+            <div class="column">
+                <div class="polaroid col-md-8 mt-3 left ">
+                    <img src="/static/myblog/img/bongda_c3.jpg" >
+
+                      <p>Highschool</p>
+
+                    <img src="/static/myblog/img/bongda_fpt.jpg" >
+                      <p>Fsoft Team</p>
+                </div>
+                </div>
+        </div>
       </div>
     </section>
 
