@@ -2,22 +2,15 @@
 {% block content %}
 {% load static %}
 <style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-    
-    .head_text {
-        color: white;
-    }
-    
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-
-    header.masthead {
+     header.masthead {
       margin-bottom: 0.5px;
+      background: no-repeat center center;
+      background-attachment: scroll;
+      position: relative;
+      background-size: cover;
+    }
+    section.edu{
+        margin-bottom: 0.5px;
       background: no-repeat center center;
       background-attachment: scroll;
       position: relative;
@@ -29,116 +22,58 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: #212529;
+      background-color: #2d3436;
       opacity: 0.5;
     }
-    header.masthead .page-heading,
-header.masthead .post-heading,
-header.masthead .site-heading {
-  padding: 200px 0 150px;
-  color: white;
-}
-
-@media only screen and (min-width: 768px) {
-  header.masthead .page-heading,
-  header.masthead .post-heading,
-  header.masthead .site-heading {
-    padding: 200px 0;
-  }
-}
-
-header.masthead .page-heading,
-header.masthead .site-heading {
-  text-align: center;
-}
-
-header.masthead .page-heading h1,
-header.masthead .site-heading h1 {
-  font-size: 50px;
-  margin-top: 0;
-}
-
-header.masthead .page-heading .subheading,
-header.masthead .site-heading .subheading {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1.1;
-  display: block;
-  margin: 10px 0 0;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-@media only screen and (min-width: 768px) {
-  header.masthead .page-heading h1,
-  header.masthead .site-heading h1 {
-    font-size: 80px;
-  }
-}
-
-header.masthead .post-heading h1 {
-  font-size: 35px;
-}
-
-header.masthead .post-heading .meta,
-header.masthead .post-heading .subheading {
-  line-height: 1.1;
-  display: none;
-}
-
-header.masthead .post-heading .subheading {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 10px 0 30px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-header.masthead .post-heading .meta {
-  font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
-  font-family: 'Lora', 'Times New Roman', serif;
-}
-
-header.masthead .post-heading .meta a {
-  color: #fff;
-}
-
-@media only screen and (min-width: 768px) {
-  header.masthead .post-heading h1 {
-    font-size: 55px;
-  }
-  header.masthead .post-heading .subheading {
-    font-size: 30px;
-  }
-}
-section.education-section {
-  background-image: url('{% static 'myblog/img/c.jpg' %}');
-  height: 500px;
-  background-color: #212529;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-
-}
-section.education-section {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1.1;
-  display: block;
-  color: black;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-section.education-section .overlay {
+    section.edu .overlay {
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: #868e96;
+      background-color: #2d3436;
       opacity: 0.5;
     }
 
+    header.masthead .site-heading {
+    padding: 200px 0 150px;
+    color: white;
+    }
+    section.edu .site{
+    padding: 200px 0 150px;
+    color: white;
+    }
+    header.masthead .site-heading {
+     text-align: center;
+    }
+    header.masthead .site-heading h1 {
+    font-size: 50px;
+    margin-top: 0;
+    }
+    header.masthead .site-heading .subheading {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 10px 0 0;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    section.edu .context{
+        font-size: 24px;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 10px 0 0;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    section.project {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-color: #2d3436;
+      opacity: 0.9;
+    }
 </style>
 <!-- About -->
 <header class="masthead"  style="background-image: url('{% static 'myblog/img/home-bg.jpg' %}')">
@@ -162,38 +97,32 @@ section.education-section .overlay {
 </header>
 
 <!-- Education -->
-<section class="education-section p-3 p-lg-5 d-flex align-items-center" id="education">
+<section class="edu p-3 p-lg-5 d-flex align-items-center" style="background-image: url('{% static 'myblog/img/e.jpg' %}')" id="education">
     <div class="overlay"></div>
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
+      <div class="site w-100 col-md-8 col-md-10 mx-auto">
+        <h1 class="mb-5">Education</h1>
 
-        <div class="education-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="education-content">
+        <div class="item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="content">
             <h3 class="mb-0">Đại học Bách Khoa Hà Nội</h3>
             <div class="subheading mb-3">Cử nhân điện tử viễn thông</div>
             <div>Lập trình Nhúng</div>
             <p>GPA: 2.5</p>
           </div>
-
-          <div class="education-date text-md-right">
-            <span class="text-primary">9/2013 - 5/2019</span>
-          </div>
         </div>
 
-        <div class="education-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="education-content">
+        <div class="item d-flex flex-column flex-md-row justify-content-between">
+          <div class="content">
             <h3 class="mb-0">SIPLAB - Signal Information Procees Laboratory</h3>
             <div class="subheading mb-3">Sinh viên nghiên cứu</div>
              <div>Nghiên cứu, lập trình các dòng vi điều khiển: 8051, PIC16F877A, ARM</div>
          </div>
-          <div class="education-date text-md-right">
-            <span class="text-primary">9/2016 - 6/2017</span>
-          </div>
         </div>
       </div>
     </section>
 
-<div class="container" id="project">
+<section class="project " id="project" style="background-image: url('{% static 'myblog/img/f.jpeg' %}')">
+<div class="container" >
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
@@ -201,17 +130,16 @@ section.education-section .overlay {
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text text-muted h7 font-italic">{{ post.author }} | {{ post.created_on}} </p>
                     <p class="card-text">{{post.content|slice:":200" }}</p>
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
             {% endfor %}
         </div>
-
     </div>
 </div>
-
+</section>
 <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
       <div class="w-100">
         <h2 class="mb-5">Interests</h2>
