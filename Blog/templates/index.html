@@ -1,133 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<style>
-
-     header.masthead {
-      margin-bottom: 0.5px;
-      background: no-repeat center center;
-      background-attachment: scroll;
-      position: relative;
-      background-size: cover;
-    }
-
-    header.masthead .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #2d3436;
-      opacity: 0.5;
-    }
-    header.masthead .site-heading {
-    padding: 200px 0 150px;
-    color: white;
-    }
-    header.masthead .site-heading {
-     text-align: center;
-    }
-    header.masthead .site-heading h1 {
-    font-size: 50px;
-    margin-top: 0;
-    }
-    header.masthead .site-heading .subheading {
-      font-size: 24px;
-      font-weight: 300;
-      line-height: 1.1;
-      display: block;
-      margin: 10px 0 0;
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-            section.edu{
-      margin-bottom: 0.5px;
-      background: no-repeat center center;
-      background-attachment: scroll;
-      position: relative;
-      background-size: cover;
-    }
-    section.edu .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #2d3436;
-      opacity: 0.5;
-    }
-
-    section.edu .site{
-    padding: 200px 0 150px;
-    color: white;
-    }
-    section.edu .context{
-        font-size: 24px;
-      font-weight: 300;
-      line-height: 1.1;
-      display: block;
-      margin: 10px 0 0;
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-
-    section.project {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      background-color: #2d3436;
-      opacity: 0.9;
-    }
-    section.project .site{
-    padding: 100px 0 50px;
-    color: white;
-    }
-
-    section.interests{
-        margin-bottom: 0.5px;
-      background: no-repeat center;
-      background-attachment: scroll;
-      position: relative;
-      background-size: cover;
-    }
-    section.interests .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #2d3436;
-      opacity: 0.3;
-    }
-    section.interests .text{
-    padding: 200px 0 150px;
-    color: white;
-    }
-    section.interest .img_tra
-
-
-    section.interest .img_tra .polaroid{
-    background-color: #2d3436;
-    box-shadow: 0 16px 48px #E3E7EB;
-    margin-bottom: 25px;
-    color: black;
-
-    section.interest .column {
-      float: left;
-      width: 50%;
-      padding: 10px;
-    }
-
-    section.interest .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-    }
-    .card{
-            box-shadow: 0 16px 48px #E3E7EB;
-        }
-
-</style>
+{% load i18n static %}
+<link rel="stylesheet" type="text/css" href="{% static "myblog/css/index.css" %}">
 <!-- About -->
 <header class="masthead"  style="background-image: url('{% static 'myblog/img/home-bg.jpg' %}')">
     <div class="overlay"></div>
@@ -142,7 +17,7 @@
                   <a class="text-light" href="mailto:quyeta2ubqn@gmail.com">quyeta2ubqn@gmail.com</a>
                 </div>
                 <p class="lead mb-5">I love Japanese culture and people. I'm learning Japanese.
-                    With a passion for technology, I wish that someday, I can work in the land of the sun</p>
+                    With a passion for technology, I wish that someday, I can work in the land of the sun.</p>
                 </div>
             </div>
         </div>
@@ -202,8 +77,8 @@
     <div class="overlay"></div>
     <div class=" text w-100 col-md-8 col-md-10 mx-auto">
         <h2 class="mb-5">Interests</h2>
-        <p>I like traveling, I want to experience culture and life in many places. Let's look back at the places I've been.
-        I love taking photos of people and nature</p>
+        <h6><p>I like traveling, I want to experience culture and life in many places. Let's look back at the places I've been.
+        I love taking photos of people and nature</p></h6>
         <div class="row">
             <div class="column">
             <div class="polaroid col-md-8 mt-3 left ">
@@ -219,22 +94,24 @@
             </div>
         </div>
         <div>
-        <p class="mb-0">Books teach me many things, so I always try to spend time reading.
-            My favorite book is: <i> How to Win Friends and Influence People (Đắc Nhân Tâm) -  Dale Carnegie</i></p>
+        <h6><p class="mb-0">Books teach me many things, so I always try to spend time reading.
+            My favorite book is: <i> How to Win Friends and Influence People (Đắc Nhân Tâm) -  Dale Carnegie</i></p></h6>
         </div>
-        <p class="mb-0">I like to play soccer with friends at school, at the company. Football helps me connect with people.</p>
+        <h6><p class="mb-0">I like to play soccer with friends at school, at the company. Football helps me connect with people.</p></h6>
         <div class="row">
             <div class="column">
                 <div class="polaroid col-md-8 mt-3 left ">
                     <img src="/static/myblog/img/bongda_c3.jpg" >
 
-                      <p>Highschool</p>
+                      <p>Highschool Team</p>
 
                     <img src="/static/myblog/img/bongda_fpt.jpg" >
                       <p>Fsoft Team</p>
                 </div>
                 </div>
         </div>
+        <h4> <p> For me failure is not scary. I believe if I have the determination, I will do what I want.
+            Even if I have to trade time, youth, money. I like a Japanese saying: <i> 七転び八起き(ななころびやおき)</i></p></h4>
       </div>
     </section>
 
